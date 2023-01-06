@@ -5,7 +5,7 @@ region = var.region
 }
 
 locals {
-  instance_name = "${terraform.workspace} instance"
+  instance_name = "backend"
 }
 
 resource "aws_instance" "siuser" {
