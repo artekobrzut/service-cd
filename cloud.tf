@@ -3,7 +3,7 @@ terraform {
     organization = "aobrzut"
 
     workspaces {
-      name = "service-cd"
+      name = "cli-service2"
     }
   }
 }
