@@ -43,6 +43,6 @@ resource "aws_security_group" "ssh-allowed" {
 
 
 output "instance_ip_addr" {
-  value       = aws_instance.backend.public_ip
+  value       = aws_instance.backend[0].public_ip
   description = "The public IP address of the main server instance."
 }
