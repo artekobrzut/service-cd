@@ -8,7 +8,7 @@ locals {
   instance_name = "backend"
 }
 
-resource "aws_instance" "siuser" {
+resource "aws_instance" "backend" {
   instance_type          = "${var.instance_type}"
   ami                    = "${var.ami}"
   count                  = "1"
@@ -39,4 +39,10 @@ resource "aws_security_group" "ssh-allowed" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+}
+
+
+output "instance_ip_addr" {
+  value       = aws_instance.backend.public_ip
+  description = "The public IP address of the main server instance."
 }
