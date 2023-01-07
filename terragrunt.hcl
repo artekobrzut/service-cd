@@ -1,4 +1,4 @@
 
 dependencies {
-  paths = []
+  paths = ["./backend","./frontend"]
 }
