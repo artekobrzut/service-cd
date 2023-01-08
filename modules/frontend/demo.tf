@@ -1,8 +1,3 @@
-provider "aws" {
-region = var.region
-  secret_key = var.secret_key
-  access_key = var.access_key
-}
 
 locals {
   instance_name = "${terraform.workspace} instance"

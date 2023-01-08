@@ -1,8 +1,4 @@
-provider "aws" {
-region = var.region
-  secret_key = var.secret_key
-  access_key = var.access_key
-}
+
 
 locals {
   instance_name = "backend"
@@ -43,6 +39,9 @@ resource "aws_security_group" "ssh-allowed" {
 
 
 output "instance_ip_addr" {
-  value       = aws_instance.backend[0].public_ip
+  value = {
+  for instance in aws_instance.backend:
+  instance.id => instance.public_ip
+  }
   description = "The public IP address of the main server instance."
 }
